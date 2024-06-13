@@ -53,6 +53,16 @@
     align-items: center;
 }
 
+.producer_chat_button {
+    border: none;
+    background: none;
+    margin-right: 1.75rem;
+}
+
+.producer_chat_button:hover {
+    cursor: pointer;
+}
+
 .producer_profile_button {
     border: none;
     background: none;

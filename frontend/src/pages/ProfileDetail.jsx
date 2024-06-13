@@ -9,6 +9,7 @@ import '../static/css/pages/ProfileDetail.css';
 import '../static/css/pages/PostDetail.css';
 import Loading from '../components/Loading';
 import PendingIcon from '@mui/icons-material/Pending';
+import ChatIcon from "@mui/icons-material/Chat";
 
 const connectButtonStyle = {
     width: '7rem',
@@ -306,6 +307,10 @@ const ProfileDetail = () => {
         })
     }
 
+    const handleChatClick = () => {
+        navigate(`/chat/${userRole}/${username}`);
+    };
+
     const handleProfileClick = () => {
         window.location.href = `/profile/${loggedInUserDetails.role}/${loggedInUserDetails.username}`;
     }
@@ -331,11 +336,12 @@ const ProfileDetail = () => {
                     <div className='producer_navbar_container'>
                         <div className='producer_navbar_left'>
                             <a href='/'>
-                                <span className='producer_nav_span_1'>Retrocraft</span>
+                                <span className='producer_nav_span_1'>Linked</span>
                                 <span className='producer_nav_span_2'>Hub</span>
                             </a>
                         </div>
                         <div className='producer_navbar_right'>
+                            <button className="freelancer_chat_button" onClick={handleChatClick}><ChatIcon style={{ fontSize: "2rem" }} /></button>
                             {/* <button className='producer_profile_button' onClick={handleProfileClick}><AccountCircleIcon style={{ fontSize: '2rem' }}/></button> */}
                             <button className='producer_navbar_logout' onClick={handleLogout}>Logout</button>
                         </div>
@@ -392,8 +398,16 @@ const ProfileDetail = () => {
                                             flexDirection: 'column',
                                             margin: '0.25rem 0'
                                         }}>
-                                            <a href="" style={{ textDecoration: 'none' }}><span>Freelancer Connections: {profileOwnerDetails?.freelancerConnections?.length ?  (profileOwnerDetails.freelancerConnections.length) : (0)}</span></a>
-                                            <a href="" style={{ textDecoration: 'none' }}><span>Producer Connections: {profileOwnerDetails?.producerConnections?.length ?  (profileOwnerDetails.producerConnections.length) : (0)}</span></a>
+                                            { 
+                                                userRole === 'FREELANCER' ?
+                                                (
+                                                    <a href="" style={{ textDecoration: 'none' }}><span>Producer Connections: {profileOwnerDetails?.producerConnections?.length ?  (profileOwnerDetails.producerConnections.length) : (0)}</span></a>
+                                                )
+                                                :
+                                                (
+                                                    <a href="" style={{ textDecoration: 'none' }}><span>Freelancer Connections: {profileOwnerDetails?.freelancerConnections?.length ?  (profileOwnerDetails.freelancerConnections.length) : (0)}</span></a>
+                                                )
+                                            }                                           
                                         </div>
                                     </div>
                                 </div>

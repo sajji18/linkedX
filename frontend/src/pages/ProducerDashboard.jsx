@@ -10,6 +10,7 @@ import Modal from '@mui/material/Modal';
 import Loading from '../components/Loading';
 import DoneIcon from '@mui/icons-material/Done';
 import ClearIcon from '@mui/icons-material/Clear';
+import ChatIcon from "@mui/icons-material/Chat";
 
 const style = {
     display: 'flex',
@@ -197,6 +198,10 @@ const ProducerDashboard = () => {
 
     }
 
+    const handleChatClick = () => {
+        navigate(`/chat/${userRole}/${username}`)
+    }
+
     const handleProfileClick = () => {
         navigate(`/profile/${userRole}/${username}`)
     }
@@ -220,11 +225,12 @@ const ProducerDashboard = () => {
                 <div className='producer_navbar_container'>
                     <div className='producer_navbar_left'>
                         <a href='/producer-dashboard'>
-                            <span className='producer_nav_span_1'>Retrocraft</span>
+                            <span className='producer_nav_span_1'>Linked</span>
                             <span className='producer_nav_span_2'>Hub</span>
                         </a>
                     </div>
                     <div className='producer_navbar_right'>
+                    <button className='producer_chat_button' onClick={handleChatClick}><ChatIcon style={{ fontSize: '2rem' }}/></button>
                     <button className='producer_profile_button' onClick={handleProfileClick}><AccountCircleIcon style={{ fontSize: '2rem' }}/></button>
                     <button className='producer_navbar_logout' onClick={handleLogout}>Logout</button>
                     </div>
