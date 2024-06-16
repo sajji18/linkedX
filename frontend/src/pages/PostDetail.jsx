@@ -225,12 +225,12 @@ const PostDetail = () => {
                                         userRole === 'PRODUCER' ? (
                                             <a href='/producer-dashboard'>
                                                 <span className='producer_nav_span_1'>Linked</span>
-                                                <span className='producer_nav_span_2'>Hub</span>
+                                                <span className='producer_nav_span_2'>X</span>
                                             </a>
                                         ) : (
                                             <a href='/freelancer-dashboard'>
                                                 <span className='producer_nav_span_1'>Linked</span>
-                                                <span className='producer_nav_span_2'>Hub</span>
+                                                <span className='producer_nav_span_2'>X</span>
                                             </a>
                                         )
                                     }

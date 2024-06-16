@@ -226,7 +226,7 @@ const ProducerDashboard = () => {
                     <div className='producer_navbar_left'>
                         <a href='/producer-dashboard'>
                             <span className='producer_nav_span_1'>Linked</span>
-                            <span className='producer_nav_span_2'>Hub</span>
+                            <span className='producer_nav_span_2'>X</span>
                         </a>
                     </div>
                     <div className='producer_navbar_right'>

@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="navbar_left">
                 <a href="/">
                     <span className="span_1">Linked</span>
-                    <span className="span_2">Hub</span>
+                    <span className="span_2">X</span>
                 </a>
             </div>
             <div className="navbar_right">

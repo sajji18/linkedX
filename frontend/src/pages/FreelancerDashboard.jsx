@@ -170,7 +170,7 @@ const FreelancerDashboard = () => {
                             <span className="freelancer_nav_span_1">
                                 Linked
                             </span>
-                            <span className="freelancer_nav_span_2">Hub</span>
+                            <span className="freelancer_nav_span_2">X</span>
                         </a>
                     </div>
                     <div className="freelancer_navbar_right">
