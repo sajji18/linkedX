@@ -9,7 +9,7 @@ LinkedX is a social platform for professional networking and job seeking made wi
 * Connection: Users can connect with one another.
 * Chat Utility: Realtime Chat facility between Connected Users.
 ## Video Demonstration
-* Click on [here](https://drive.google.com/drive/u/1/folders/17kwOJhitKxr9VGdQJ9nJJ9H_0BxGjjHD)
+* Click [here](https://drive.google.com/drive/u/1/folders/17kwOJhitKxr9VGdQJ9nJJ9H_0BxGjjHD) for the video demonstration
 ## Frontend
 ### Technologies used
 * [ReactJS](https://react.dev/): React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.
