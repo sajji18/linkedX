@@ -28,7 +28,7 @@
 
 .sent_message {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     margin: 0.5rem 0;
@@ -49,7 +49,7 @@
 
 .received_message {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     margin: 0.5rem 0;

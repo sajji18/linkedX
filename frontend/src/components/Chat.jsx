@@ -9,10 +9,11 @@ const Chat = ({ senderId, senderRole, receiverId, receiverRole, receiverUsername
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [token, setToken] = useState(localStorage.getItem('token'));
-    console.log(token)
+    const [trigger, setTrigger] = useState(false);
+    // console.log(token)
 
-    console.log(senderId, senderRole, receiverId, receiverRole, receiverUsername);
-    console.log(messages)
+    // console.log(senderId, senderRole, receiverId, receiverRole, receiverUsername);
+    // console.log(messages)
     useEffect(() => {
         socket.emit('join', { senderId, senderRole });
 
@@ -42,7 +43,7 @@ const Chat = ({ senderId, senderRole, receiverId, receiverRole, receiverUsername
         return () => {
             socket.off('receiveMessage');
         };
-    }, [senderId, senderRole, receiverId, receiverRole]);
+    }, [senderId, senderRole, receiverId, receiverRole, trigger]);
 
     const sendMessage = () => {
         const newMessage = {
@@ -51,10 +52,20 @@ const Chat = ({ senderId, senderRole, receiverId, receiverRole, receiverUsername
             receiverId: receiverId,
             receiverRole: receiverRole,
             content: message,
-            timestamp: new Date()
+            timestamp: new Date().toISOString()
         };
         socket.emit('sendMessage', newMessage);
+        // console.log(newMessage.senderRole)
+        // console.log(newMessage.receiverRole)
         setMessages((prevMessages) => [...prevMessages, newMessage]);
+        // messages.forEach((msg) => {
+        //     if (msg.sender === senderId) {
+        //         console.log('Sender:', msg.content);
+        //     } else {
+        //         console.log('Receiver:', msg.content);
+        //     }
+        // });
+        setTrigger(!trigger);
         setMessage('');
     };
 
@@ -74,7 +85,7 @@ const Chat = ({ senderId, senderRole, receiverId, receiverRole, receiverUsername
                             Array.isArray(messages) && messages.length > 0 ? 
                             (
                                 messages.map((msg, index) => {
-                                    console.log(msg.sender, senderId)
+                                    // console.log(msg.sender, senderId)
                                     return (
                                         <div className={(msg.sender === senderId) ? 'sent_message' : 'received_message'} key={index}>
                                             <span>{msg.content}</span>
